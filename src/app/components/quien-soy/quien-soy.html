@@ -1,11 +1,24 @@
-<h1>¿Quién Soy?</h1>
-<div>
+<div class="pagina">
+  <div class="tarjeta">
+
+    <h1 class="titulo">¿QUIÉN SOY?</h1>
+
     @if(usuarioGithub()){
-    <h2>{{usuarioGithub().name}}</h2>
-    <img [src]="usuarioGithub().avatar_url" alt="">
-    <p>Tengo 23 años, soy un estudiante de Programacion en la UTN y mi hobbies son ir al gimnasio y jugar juegos</p>}
-</div>
-<div>
-    <h2>Mi Juego</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, temporibus ea obcaecati magnam tempore nobis quia dolor. Voluptate, illo? Dolorum minus perspiciatis sit sint vitae ipsam optio pariatur? Quam, autem?</p>
+    <div class="perfil">
+      <img class="avatar" [src]="usuarioGithub().avatar_url" alt="foto de perfil">
+      <h2 class="nombre">{{usuarioGithub().name}}</h2>
+      <p class="descripcion">Tengo 23 años, soy un estudiante de Programación en la UTN y mis hobbies son ir al gimnasio y jugar juegos</p>
+    </div>
+    } @else {
+      <p class="descripcion">Cargando...</p>
+    }
+
+    <hr class="divisor">
+
+    <div class="seccion-juego">
+      <h2 class="subtitulo">MI JUEGO</h2>
+      <p class="descripcion">Muy pronto... Estate al tanto...</p>
+    </div>
+
+  </div>
 </div>

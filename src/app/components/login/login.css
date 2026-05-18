@@ -1,0 +1,16 @@
+.tarjeta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+  flex-direction: column;
+  row-gap: 25px;
+  border: 2px solid #e8b400;
+  border-radius: 20px;
+  padding: 60px 80px;
+  width: 100%;
+  max-width: 700px;
+}
+.icono-joystick{
+    font-size: 80px;
+}
