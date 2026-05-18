@@ -1,6 +1,6 @@
 # Sala de Juegos — TP1
 **Alumno:** Justo Aymo  
-**Deploy:** ()  
+**Deploy:** (https://tp1-sala-de-juegos-aymo-justo-bg57-justo456s-projects.vercel.app/)  
 **Tecnologías:** Angular, Supabase, TypeScript, Bootstrap
 
 ## Sprint 1
