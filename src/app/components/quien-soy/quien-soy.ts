@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, inject, signal } from '@angular/core';
+import { GithubService } from '../../services/github';
 
 @Component({
   selector: 'app-quien-soy',
@@ -8,15 +8,12 @@ import { Component, inject, signal } from '@angular/core';
   styleUrl: './quien-soy.css',
 })
 export class QuienSoy {
-  http = inject(HttpClient);
-  url = "https://api.github.com/users/Justo456";
-  usuarioGithub = signal<any>(null)
+  githubService = inject(GithubService);
+  usuarioGithub = signal<any>(null);
 
   ngOnInit() {
-    this.http.get(this.url).subscribe((data : any)=>{
+    this.githubService.getUsuario('Justo456').subscribe((data: any) => {
       this.usuarioGithub.set(data);
-      console.log(data);
-    })
+    });
   }
-  
 }
