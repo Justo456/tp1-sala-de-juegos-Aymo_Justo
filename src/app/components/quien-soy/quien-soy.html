@@ -5,8 +5,8 @@
 
     @if(usuarioGithub()){
     <div class="perfil">
-      <img class="avatar" [src]="usuarioGithub().avatar_url" alt="foto de perfil">
-      <h2 class="nombre">{{usuarioGithub().name}}</h2>
+      <img class="avatar" [src]="usuarioGithub()?.avatar_url" alt="foto de perfil">
+      <h2 class="nombre">{{usuarioGithub()?.name}}</h2>
       <p class="descripcion">Tengo 23 años, soy un estudiante de Programación en la UTN y mis hobbies son ir al gimnasio y jugar juegos</p>
     </div>
     } @else {
