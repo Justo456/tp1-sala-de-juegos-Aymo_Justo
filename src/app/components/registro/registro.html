@@ -1,8 +1,37 @@
 <div class="pagina">
+  @if(mostrarModal()) {
+  <div class="modal-fondo">
+    <div class="modal-tarjeta">
+      <p class="modal-mensaje">{{ mensajeError() }}</p>
+      <button class="boton" (click)="cerrarModal()">CERRAR</button>
+    </div>
+  </div>
+  }
   <div class="tarjeta">
     <div class="icono-joystick">🕹️</div>
     <h1 class="titulo">REGISTRO</h1>
-    <p class="descripcion">Creá tu cuenta y empezá a jugar</p>
-    <button class="boton-principal" routerLink="/login">YA TENGO CUENTA</button>
+    <p class="subtitulo">CREÁ TU CUENTA</p>
+    
+    <form [formGroup]="formulario" (ngSubmit)="registrar()">
+      <label class="gamer-label">EMAIL</label>
+      <input class="gamer-input" formControlName="email" type="email">
+
+      <label class="gamer-label">CONTRASEÑA</label>
+      <input class="gamer-input" formControlName="password" type="password">
+
+      <label class="gamer-label">NOMBRE</label>
+      <input class="gamer-input" formControlName="nombre" type="text">
+
+      <label class="gamer-label">APELLIDO</label>
+      <input class="gamer-input" formControlName="apellido" type="text">
+
+      <label class="gamer-label">EDAD</label>
+      <input class="gamer-input" formControlName="edad" type="number">
+
+      <button class="boton-principal" type="submit">REGISTRARSE</button>
+    </form>
+
+    <button class="boton-secundario" routerLink="/login">YA TENGO CUENTA</button>
   </div>
+  
 </div>

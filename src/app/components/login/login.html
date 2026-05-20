@@ -1,9 +1,33 @@
 <div class="pagina">
+
+  @if(mostrarModal()) {
+  <div class="modal-fondo">
+    <div class="modal-tarjeta">
+      <p class="modal-mensaje">{{ mensajeError() }}</p>
+      <button class="boton" (click)="cerrarModal()">CERRAR</button>
+    </div>
+  </div>
+  }
+
   <div class="tarjeta">
     <div class="icono-joystick">🕹️</div>
     <h1 class="titulo">SALA DE JUEGOS</h1>
     <p class="subtitulo">INICIAR SESIÓN</p>
-    <button class="boton-principal" routerLink="/home">INGRESAR</button>
+    <form [formGroup]="formulario" (ngSubmit)="ingresar()">
+      <label class="gamer-label">EMAIL</label>
+      <input class="gamer-input" formControlName="email" type="email">
+      <label class="gamer-label">CONTRASEÑA</label>
+      <input class="gamer-input" formControlName="password" type="password">
+      <button class="boton-principal" type="submit">INGRESAR</button>
+    </form>
     <button class="boton-secundario" routerLink="/registro">REGISTRARSE</button>
+    <hr class="divisor">
+    <p class="subtitulo">ACCESO RÁPIDO</p>
+    <div class="quick-btns">
+      <button class="boton-quick" (click)="ingresoRapido(1)">PLAYER 1</button>
+      <button class="boton-quick" (click)="ingresoRapido(2)">PLAYER 2</button>
+      <button class="boton-quick" (click)="ingresoRapido(3)">PLAYER 3</button>
+    </div>
   </div>
+
 </div>
