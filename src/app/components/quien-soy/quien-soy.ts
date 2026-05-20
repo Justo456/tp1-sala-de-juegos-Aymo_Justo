@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { GithubService } from '../../services/github';
-import { IUsuarioGithub } from '../../interfaces/UsuarioGithub';
+import { IUsuarioGithub } from '../../interfaces/interfaces'
 @Component({
   selector: 'app-quien-soy',
   imports: [],
@@ -18,4 +18,3 @@ export class QuienSoy {
     });
   }
 }
-//interfaz quien soy implementar
