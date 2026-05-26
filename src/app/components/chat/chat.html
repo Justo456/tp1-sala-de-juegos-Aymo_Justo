@@ -4,20 +4,17 @@
 
     <div class="mensajes">
       @for (msg of mensajes(); track $index) {
-        <div class="mensaje" [class.propio]="msg.usuario_email === usuarioEmail">
-          <span class="mensaje-email">{{ msg.usuario_email }}</span>
-          <span class="mensaje-texto">{{ msg.mensaje }}</span>
-          <span class="mensaje-hora">{{ msg.created_at | date:'HH:mm' }}</span>
-        </div>
+      <div class="mensaje" [class.propio]="msg.usuario_email === usuarioEmail">
+        <span class="mensaje-email">{{ msg.usuario_email }}</span>
+        <span class="mensaje-texto">{{ msg.mensaje }}</span>
+        <span class="mensaje-hora">{{ msg.created_at | date:'HH:mm' }}</span>
+      </div>
       }
     </div>
 
     <div class="chat-input">
-      <input 
-        class="gamer-input" 
-        type="text" 
-        [(ngModel)]="nuevoMensaje" 
-        placeholder="Escribí tu mensaje..."
+      <input class="gamer-input" type="text" [value]="nuevoMensaje()"
+        (input)="nuevoMensaje.set($any($event.target).value)" placeholder="Escribí tu mensaje..."
         (keyup.enter)="enviar()">
       <button class="boton-principal" (click)="enviar()">ENVIAR</button>
     </div>

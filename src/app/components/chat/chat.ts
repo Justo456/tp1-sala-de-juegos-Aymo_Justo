@@ -11,7 +11,7 @@ import { DatePipe } from '@angular/common';
 export class Chat implements OnInit, OnDestroy {
   supabase = inject(SupabaseService);
   mensajes = signal<any[]>([]);
-  nuevoMensaje = '';
+  nuevoMensaje = signal('');
   usuarioEmail = '';
   suscripcion: any;
 
@@ -30,15 +30,13 @@ export class Chat implements OnInit, OnDestroy {
   }
 
   async enviar() {
-    if (!this.nuevoMensaje.trim()) return;
-
-    await this.supabase.enviarMensaje({
-      usuario_email: this.usuarioEmail,
-      mensaje: this.nuevoMensaje
-    });
-
-    this.nuevoMensaje = '';
-  }
+  if (!this.nuevoMensaje()) return;
+  await this.supabase.enviarMensaje({
+    usuario_email: this.usuarioEmail,
+    mensaje: this.nuevoMensaje()
+  });
+  this.nuevoMensaje.set('');
+}
 
   ngOnDestroy() {
     this.suscripcion?.unsubscribe();
