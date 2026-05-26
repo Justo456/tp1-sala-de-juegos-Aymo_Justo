@@ -20,3 +20,16 @@
 - Cerrar sesión
 - Guards de ruta (auth y login)
 - Modales de error en lugar de alert()
+
+## Sprint 3
+- Juego Ahorcado con guardado de resultados en base de datos
+- Juego Mayor o Menor con guardado de resultados en base de datos
+- Sala de chat en tiempo real con Supabase
+- Los mensajes muestran usuario y hora de envío
+- Mensaje propio diferenciado visualmente
+
+## Sprint 4
+- Juego Preguntados con API externa (Open Trivia DB)
+- Juego propio: Adivina el Número con guardado de resultados en base de datos
+- Página de resultados con 4 tablas ordenadas por mejor desempeño
+- Modales de victoria y derrota en todos los juegos
