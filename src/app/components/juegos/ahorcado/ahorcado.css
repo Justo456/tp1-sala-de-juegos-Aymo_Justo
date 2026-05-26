@@ -1,0 +1,61 @@
+.palabra-contenedor {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 32px 0;
+}
+
+.letra-vacia {
+  color: #e8b400;
+  font-size: 32px;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #e8b400;
+  min-width: 24px;
+  text-align: center;
+}
+
+.letras-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.boton-letra {
+  background: #0f0f1a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.boton-letra:hover:not(:disabled) {
+  border-color: #e8b400;
+  color: #e8b400;
+}
+
+.boton-letra:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.mensaje-victoria {
+  color: #4caf50;
+  font-size: 28px;
+  letter-spacing: 4px;
+  text-align: center;
+  margin: 24px 0;
+}
+
+.mensaje-derrota {
+  color: #f44336;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 24px 0;
+}

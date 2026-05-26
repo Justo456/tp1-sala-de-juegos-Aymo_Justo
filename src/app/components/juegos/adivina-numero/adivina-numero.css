@@ -1,0 +1,30 @@
+.numeros-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.boton-numero {
+  background: #0f0f1a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #aaa;
+  padding: 10px 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.boton-numero:hover {
+  border-color: #e8b400;
+  color: #e8b400;
+}
+
+.pista {
+  color: #e8b400;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 16px 0;
+}

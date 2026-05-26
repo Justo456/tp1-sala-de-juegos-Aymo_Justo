@@ -1,0 +1,29 @@
+<div class="pagina">
+  <div class="tarjeta">
+    <h1 class="titulo">ADIVINA EL NÚMERO</h1>
+    <p class="descripcion">Tenés {{ maxIntentos }} intentos para adivinar un número del 1 al 100</p>
+    <p class="descripcion">Intentos: {{ intentos() }} / {{ maxIntentos }}</p>
+
+    @if (pista()) {
+      <p class="pista">{{ pista() }}</p>
+    }
+
+    @if (juegoTerminado()) {
+      <div class="modal-fondo">
+        <div class="modal-tarjeta">
+          <p class="modal-mensaje">{{ mensajeModal() }}</p>
+          <div style="display:flex; gap:12px; justify-content:center">
+            <button class="boton-principal" (click)="reiniciar()">JUGAR DE NUEVO</button>
+            <button class="boton-secundario" routerLink="/home">VOLVER AL HOME</button>
+          </div>
+        </div>
+      </div>
+    } @else {
+      <div class="numeros-grid">
+        @for (n of opciones; track $index) {
+          <button class="boton-numero" (click)="adivinar(n)">{{ n }}</button>
+        }
+      </div>
+    }
+  </div>
+</div>

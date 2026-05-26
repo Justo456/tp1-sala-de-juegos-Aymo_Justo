@@ -1,11 +1,15 @@
 <nav class="navbar">
   <div class="navbar-contenido">
-    <a class="navbar-marca" routerLink="/home">🕹️ SALA DE JUEGOS</a>
+    <a class="navbar-marca" routerLink="/home">
+      <span class="marca-icono">🕹️</span>
+      <span class="marca-texto">SALA<span class="marca-acento">JUEGOS</span></span>
+    </a>
     <div class="navbar-links">
-      <a class="navbar-link" routerLink="/home">HOME</a>
+      <a class="navbar-link" routerLink="/home">INICIO</a>
       <a class="navbar-link" routerLink="/quien-soy">QUIÉN SOY</a>
-      <a class="navbar-link" routerLink="/login">LOGIN</a>
-      <a class="navbar-link" routerLink="/registro">REGISTRO</a>
+      <a class="navbar-link" routerLink="/chat">CHAT</a>
+      <a class="navbar-link" routerLink="/resultados">PUNTAJES</a>
+      <button class="boton-cerrar" (click)="cerrarSesion()">CERRAR SESIÓN</button>
     </div>
   </div>
 </nav>

@@ -1,0 +1,25 @@
+<div class="pagina">
+    <div class="tarjeta">
+        <h1 class="titulo">PREGUNTADOS</h1>
+
+        @if (juegoTerminado()) {
+        <p class="descripcion">Terminaste con {{ aciertos }} / {{ preguntas.length }} aciertos</p>
+        <button class="boton" (click)="reiniciar()">JUGAR DE NUEVO</button>
+        <button class="boton-secundario" routerLink="/home">VOLVER AL HOME</button>
+        } @else if (preguntaActual()) {
+        <p class="descripcion">Pregunta {{ indicePregunta + 1 }} / {{ preguntas.length }}</p>
+        <h2 class="subtitulo" >{{preguntaActual().question}}</h2>
+        <div class="opciones">
+            @for (opcion of opciones(); track $index) {
+            <button class="boton-opcion"
+                [class.correcta]="respuestaSeleccionada && opcion === preguntaActual().correct_answer"
+                [class.incorrecta]="respuestaSeleccionada === opcion && opcion !== preguntaActual().correct_answer"
+                [disabled]="!!respuestaSeleccionada" (click)="seleccionarRespuesta(opcion)" [innerHTML]="opcion">
+            </button>
+            }
+        </div>
+        } @else {
+        <p class="descripcion">Cargando preguntas...</p>
+        }
+    </div>
+</div>
