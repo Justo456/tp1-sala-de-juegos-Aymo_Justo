@@ -1,8 +1,40 @@
 <div class="pagina">
-  <div class="tarjeta">
-    
-      <h1 class="titulo">BIENVENIDO/A, {{usuario().nombre}}</h1>
-      <button class="boton" (click)="cerrarSesion()">CERRAR SESIÓN</button>
-    
+  <div class="home-contenedor">
+    <div class="bienvenida">
+      <h1 class="titulo">BIENVENIDO/A, {{ usuario()?.nombre }}</h1>
+      <p class="descripcion">¿A qué querés jugar hoy?</p>
+    </div>
+
+    <div class="grilla-juegos">
+      <div class="card-juego" routerLink="/ahorcado">
+        <div class="card-imagen">
+          <img src="img/Ahorcado.png" alt="Foto del Ahorcado">
+        </div>
+        <h3 class="card-titulo">AHORCADO</h3>
+        <p class="card-descripcion">Adiviná la palabra antes de quedarte sin vidas</p>
+      </div>
+      <div class="card-juego" routerLink="/mayor-menor">
+        <div class="card-imagen">
+          <img src="img/Mayor-Menor.png" alt="Foto del Mayor-Menor">
+        </div>
+        <h3 class="card-titulo">MAYOR O MENOR</h3>
+        <p class="card-descripcion">Adiviná si la próxima carta es mayor o menor</p>
+      </div>
+      <div class="card-juego" routerLink="/preguntados">
+        <div class="card-imagen">
+          <img src="img/Preguntados.png" alt="Foto del Preguntados">
+        </div>
+        <h3 class="card-titulo">PREGUNTADOS</h3>
+        <p class="card-descripcion">Poné a prueba tus conocimientos</p>
+      </div>
+      <div class="card-juego" routerLink="/adivina-numero">
+        <div class="card-imagen">
+          <img src="img/Adivina-numero.png" alt="Adivina el número">
+        </div>
+        <h3 class="card-titulo">ADIVINA EL NÚMERO</h3>
+        <p class="card-descripcion">Adiviná el número secreto antes de quedarte sin intentos</p>
+      </div>
+    </div>
+
   </div>
 </div>

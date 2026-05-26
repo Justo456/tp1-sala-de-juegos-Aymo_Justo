@@ -1,0 +1,36 @@
+<div class="pagina">
+  <div class="tarjeta">
+    <h1 class="titulo">AHORCADO</h1>
+    <p class="descripcion">Pista: {{ palabraActual.pista }}</p>
+    <p class="descripcion">Errores: {{ errores }} / {{ maxErrores }}</p>
+
+    <div class="palabra-contenedor">
+      @for (letra of palabraVacias; track $index) {
+      <span class="letra-vacia">{{ letra }}</span>
+      }
+    </div>
+
+    @if (juegoTerminado) {
+    
+    <div class="modal-fondo">
+      <div class="modal-tarjeta">
+        <p class="modal-mensaje">{{ mensajeModal() }}</p>
+        <div style="display:flex; gap:12px; justify-content:center">
+          <button class="boton-principal " (click)="reiniciar()">JUGAR DE NUEVO</button>
+          <button class="boton-secundario" routerLink="/home">VOLVER AL HOME</button>
+        </div>
+      </div>
+    </div>
+    
+    } @else {
+    <div class="letras-contenedor">
+      @for (letra of letras; track $index) {
+      <button class="boton-letra" (click)="seleccionarLetra(letra)" [disabled]="letrasUsadas.includes(letra)">
+        {{ letra }}
+      </button>
+      }
+    </div>
+    }
+  </div>
+
+</div>

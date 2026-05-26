@@ -1,0 +1,71 @@
+<div class="pagina">
+  <div class="resultados-contenedor">
+    <h1 class="titulo">RESULTADOS</h1>
+
+    <h2 class="subtitulo">AHORCADO</h2>
+    <table class="tabla">
+      <tr>
+        <th>Usuario</th>
+        <th>Palabra</th>
+        <th>Errores</th>
+        <th>Ganó</th>
+        <th>Tiempo</th>
+      </tr>
+      @for (r of ahorcado(); track $index) {
+        <tr>
+          <td>{{ r.usuario_email }}</td>
+          <td>{{ r.palabra }}</td>
+          <td>{{ r.errores }}</td>
+          <td>{{ r.gano ? 'Sí' : 'No' }}</td>
+          <td>{{ r.tiempo }}s</td>
+
+          
+        </tr>
+      }
+    </table>
+
+    <h2 class="subtitulo">MAYOR O MENOR</h2>
+    <table class="tabla">
+      <tr>
+        <th>Usuario</th>
+        <th>Aciertos</th>
+      </tr>
+      @for (r of mayorMenor(); track $index) {
+        <tr>
+          <td>{{ r.usuarios_email }}</td>
+          <td>{{ r.aciertos }}</td>
+        </tr>
+      }
+    </table>
+
+    <h2 class="subtitulo">PREGUNTADOS</h2>
+    <table class="tabla">
+      <tr>
+        <th>Usuario</th>
+        <th>Aciertos</th>
+        <th>Total</th>
+      </tr>
+      @for (r of preguntados(); track $index) {
+        <tr>
+          <td>{{ r.usuario_email }}</td>
+          <td>{{ r.aciertos }}</td>
+          <td>{{ r.total_preguntas }}</td>
+        </tr>
+      }
+    </table>
+
+    <h2 class="subtitulo">ADIVINA EL NUMERO</h2>
+    <table class="tabla">
+      <tr>
+        <th>Usuario</th>
+        <th>Intentos</th>
+      </tr>
+      @for (r of adivinaNumero(); track $index) {
+        <tr>
+          <td>{{ r.usuario_email }}</td>
+          <td>{{ r.puntaje }}</td>
+        </tr>
+      }
+    </table>
+  </div>
+</div>

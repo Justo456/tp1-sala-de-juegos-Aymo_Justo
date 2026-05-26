@@ -1,0 +1,33 @@
+.resultados-contenedor {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+}
+
+.tabla th {
+  background: #1a1a2e;
+  color: #e8b400;
+  padding: 12px;
+  text-align: left;
+  letter-spacing: 2px;
+  font-size: 13px;
+  border-bottom: 2px solid #e8b400;
+}
+
+.tabla td {
+  color: #aaa;
+  padding: 10px 12px;
+  font-size: 14px;
+  border-bottom: 1px solid #333;
+}
+
+.tabla tr:hover td {
+  color: #fff;
+  background: #1a1a2e;
+}
